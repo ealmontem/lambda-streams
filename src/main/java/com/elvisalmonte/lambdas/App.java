@@ -11,8 +11,12 @@ public class App {
 
 
         Math suma = (a,b) -> a * b;
-        Math divisible = (a,b) -> a / b;
+        Math divisible = (a,b) -> {
+            System.out.println("Div:");
+            return a / b;
+        };
         //
+
         System.out.println(divisible.div(2.0,2.0));
         System.out.println(suma.sum(2.0,2.0));
         System.out.println(substract.excecute(3.0,2.0));
