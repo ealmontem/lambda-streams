@@ -1,14 +1,27 @@
 package com.elvisalmonte.fundamentals;
 
+import java.util.List;
+
 public class App {
     public static void main(String[] args) {
 
-       ProductDB productDB = new ProductDB();
-       EmployeeDB employee = new EmployeeDB();
-       productDB.getById(2L);
-       employee.getById(1L);
-       System.out.println(productDB.getById(2L));
-        System.out.println(employee.getById(1L));
+        System.out.println(Employee.class.getName());
+        System.out.println(Product.class.getName());
+
+        DataBaseService<String> dbAnonimo = new DataBaseService<String>() {
+            @Override
+            public String getById(Long id) {
+                return "";
+            }
+
+            @Override
+            public List<String> getAllProducts() {
+                return List.of();
+            }
+        };
+
+
+        System.out.println(dbAnonimo.getClass().getName());
 
     }
 }
